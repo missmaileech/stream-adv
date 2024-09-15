@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="monetag" content="f3ecc71ccb639ccf66d9d0dee93d3e7a">
+    <title>{{file_name}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Delius">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
+    <style>
+        marquee {
+            font-size: 20px;
+            font-weight: 800;
+            color: Black;
+            font-family: serif;
+        }
+    </style>
+    <style>
+        marquee {
+            font-size: 30px;
+            font-weight: 800;
+            color: Black;
+            font-family: serif;
+        }
+    </style>
+</head>
+
+<body class="cyber">
+
+    <header>
+        <div class="toogle"></div>
+        <div id="file-name" class="cyber">
+            <marquee direction="left"> {{file_name}}</marquee>
+        </div>
+    </header>
+
+
+    <div>
+        <video id="player" class="player" src="{{file_url}}" type="video/mp4" playsinline controls width="100%"></video>
+    </div>
+
+    <div>
+        <p>
+            <center>
+                <h4>Video not playing? Possibly because your browser or the player doesn't support codec. Please
+                    download and watch :D</h4>
+            </center>
+        </p>
+        <div>
+            <center>
+                <h5>Click the below button to watch/download in your favorite player</h5>
+            </center>
+            <center>
+
+                <button class="cybr-btn" style="font-size: 20px; background-color: skyblue; border-radius: 10px;"
+                    onclick="window.location.href = 'intent:{{current_url}}#Intent;package=com.mxtech.videoplayer.ad;S.title={{file_name}};end'">MX
+                    player
+                    <!-- <span aria-hidden>_</span> -->
+                    <!-- <span aria-hidden class="cybr-btn__glitch">_404 Error</span> -->
+                </button> &nbsp
+
+                <button class="cybr-btn" style="font-size: 20px; background-color: skyblue; border-radius: 10px;"
+                    onclick="window.location.href = 'intent:{{current_url}}#Intent;package=com.mxtech.videoplayer.pro;S.title={{file_name}};end'">
+                    MX player pro
+                    <!-- <span aria-hidden>_</span> -->
+                    <!-- <span aria-hidden class="cybr-btn__glitch">_404 Error</span> -->
+                </button> &nbsp
+
+                <p>&nbsp</p>
+                <button class="cybr-btn" style="font-size: 20px; background-color: orange; border-radius: 10px;"
+                    onclick="window.location.href = 'vlc://{{current_url}}'">
+                    VLC player
+                    <!-- <span aria-hidden>_</span> -->
+                    <!-- <span aria-hidden class="cybr-btn__glitch">_404 Error</span></button> &nbsp -->
+
+                    <button class="cybr-btn" style="font-size: 20px; background-color: red; border-radius: 10px;"
+                        onclick="window.location.href = 'playit://playerv2/video?url={{current_url}}&amp;title={{file_name}}'">Playit
+                        player
+                        <!-- <span aria-hidden>_</span> -->
+                        <!-- <span aria-hidden class="cybr-btn__glitch">_404 Error</span> -->
+                    </button> &nbsp
+                    <p>&nbsp</p>
+
+                    <button class="cybr-btn" style="font-size: 20px; background-color: yellow; border-radius: 10px;"
+                        onclick="window.location.href = '{{current_url}}'">Save in your gallery
+                        <!-- <span aria-hidden>_</span> -->
+                        <!-- <span aria-hidden class="cybr-btn__glitch">_404 Error</span> -->
+                        <span aria-hidden class="cybr-btn__tag">_{{file_name}}</span>
+                    </button> &nbsp
+            </center>
+        </div>
+    </div>
+    <footer>
+        <span>
+            &nbsp;
+        </span>
+    </footer>
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+    <script>
+        const controls = [
+            'play-large',
+            'rewind',
+            'play',
+            'fast-forward',
+            'progress',
+            'current-time',
+            'duration',
+            'mute',
+            'volume',
+            'captions',
+            'settings',
+            'pip',
+            'airplay',
+            'download',
+            'fullscreen'
+        ];
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = Plyr.setup('.player', { controls });
+        });
+
+        const body = document.querySelector('body');
+        const footer = document.querySelector('footer');
+        const toogle = document.querySelector('.toogle');
+        toogle.onclick = () => {
+            body.classList.toggle('dark')
+            footer.classList.toggle('dark')
+            title.classList.toggle('dark')
+        }
+    </script>
+</body>
+
+</html>

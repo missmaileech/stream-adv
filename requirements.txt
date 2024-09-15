@@ -1,0 +1,12 @@
+pyrogram
+tgcrypto<=1.2.3
+aiohttp
+python-dotenv<=0.20.0
+motor
+aiofiles
+dnspython
+apscheduler
+requests
+psutil
+pyromod
+jinja2
